@@ -23,6 +23,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -80,7 +81,7 @@ endfunction
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
-else
+el
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
@@ -233,3 +234,20 @@ let g:strip_whitespace_on_save=1
 " fzf config
 """"""""""""""""""""""""""""""""""
 nnoremap <C-p> :Files<CR>
+
+"""""""""""""""""""""""""""""""""""
+" easymotion config
+"""""""""""""""""""""""""""""""""""
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
