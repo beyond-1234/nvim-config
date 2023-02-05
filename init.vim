@@ -5,7 +5,9 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
-
+:set scrolloff=5
+:set showmatch
+:set autoread
 
 call plug#begin()
 
@@ -24,6 +26,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
