@@ -27,6 +27,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
+Plug 'frazrepo/vim-rainbow'
 
 call plug#end()
 
@@ -243,14 +244,20 @@ nnoremap <C-p> :Files<CR>
 """""""""""""""""""""""""""""""""""
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
-
 " Turn on case-insensitive feature
 let g:EasyMotion_smartcase = 1
 
+" <Leader>c{char} to move to {char}
+map <Leader>c <Plug>(easymotion-bd-f)
+
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <Leader>l <Plug>(easymotion-bd-jk)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+
+
+"""""""""""""""""""""""""""""""""""
+" rainbow
+"""""""""""""""""""""""""""""""""""
+let g:rainbow_active = 1
